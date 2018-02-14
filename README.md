@@ -3,4 +3,4 @@
 https://github.com/huangs
 anyeah/springboot-mybatis
 
-整合了Cacheable缓存，CachePut，CacheEvict尚未实现
+整合了Cacheable缓存，CachePut缓存，CacheEvict尚未实现
