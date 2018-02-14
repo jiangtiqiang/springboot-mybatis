@@ -11,5 +11,5 @@ public interface UserInfoService {
 
 
     UserInfo getUserBySpringCatche(UserInfo userInfo);
-    Integer updateUserBySpringCatche(UserInfo userInfo);
+    UserInfo saveOrUpdateUserBySpringCatche(UserInfo userInfo);
 }
