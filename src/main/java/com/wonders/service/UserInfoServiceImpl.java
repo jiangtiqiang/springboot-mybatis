@@ -24,11 +24,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     /**
      * 查询user时候做的缓存
-     *
-     * @return
      */
     @Override
-    @Cacheable(value = "userInfo",key = "#userInfo.uid")
+    @Cacheable(value = "userInfo", key = "#userInfo.uid")
     public UserInfo getUserBySpringCatche(UserInfo userInfo) {
         Long id = userInfo.getUid();
         UserInfo u1 = userInfoMapper.selectUserByCatche(id);
@@ -40,13 +38,12 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     /**
      * 保存或者更新user的时候做缓存
-     * !!!!!!!!!!!!是吧返回值存入value!!!!!!!!!!!!!!
+     * !!!是把返回值存入value!!!
      * xml中 flushCache="false"
-     * @param userInfo
-     * @return
      */
     @Override
-    @CachePut(value = "userInfo",key = "#userInfo.uid")//这个注释可以确保方法被执行，同时方法的返回值也被记录到缓存中.即调用该方法时，会把uid作为key，返回值作为value放入缓存；
+    @CachePut(value = "userInfo", key = "#userInfo.uid")
+//这个注释可以确保方法被执行，同时方法的返回值也被记录到缓存中.即调用该方法时，会把uid作为key，返回值作为value放入缓存；
     public UserInfo saveOrUpdateUserBySpringCatche(UserInfo userInfo) {
         System.out.println("为id、key为:" + userInfo.getUid() + "的数据做了update缓存");
         userInfoMapper.updateByPrimaryKey(userInfo);

@@ -9,7 +9,7 @@ logging:
         com.wonders.mapper: DEBUG
         #root: INFO
         #com.apache.ibatis: INFO
-        path: ./mybatis.log
+        #path: ./mybatis.log
 
 spring:
   #数据源配置
