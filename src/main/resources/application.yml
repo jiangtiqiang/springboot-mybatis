@@ -3,7 +3,13 @@ server:
 
 logging:
   level:
-    learning: trace
+        #org.springframework.jdbc: INFO
+        #org.springframework.transaction: INFO
+        #debug就可以打印mybatis日志了
+        com.wonders.mapper: DEBUG
+        #root: INFO
+        #com.apache.ibatis: INFO
+        path: ./mybatis.log
 
 spring:
   #数据源配置
@@ -19,3 +25,6 @@ mybatis:
   type-aliases-package: wonders.entity
   #mapper.xml所在位置
   mapper-locations: classpath:mappers/*.xml
+
+
+

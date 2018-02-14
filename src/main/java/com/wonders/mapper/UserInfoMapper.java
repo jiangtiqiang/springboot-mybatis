@@ -52,4 +52,7 @@ public interface UserInfoMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(UserInfo record);
+
+    //@Cacheable(cacheNames = "users")
+    UserInfo selectUserByCatche(Long uid);
 }

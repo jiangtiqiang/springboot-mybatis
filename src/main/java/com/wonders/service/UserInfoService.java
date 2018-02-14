@@ -8,4 +8,8 @@ import com.wonders.entity.UserInfo;
  */
 public interface UserInfoService {
     UserInfo getUser(Long uid);
+
+
+    UserInfo getUserBySpringCatche(UserInfo userInfo);
+    Integer updateUserBySpringCatche(UserInfo userInfo);
 }
