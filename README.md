@@ -84,4 +84,5 @@ logging:
 1.CacheEvict尚未实现 
 2.Cacheable里面其他的属性还没有测试成demo
 3.update的xml中 flushCache="false"作用是什么。
-4.规范代码注释
+4.ehcache.xml中的配置还不清楚，同时还可以采用java配置舍弃xml配置方式
+5.规范代码注释
