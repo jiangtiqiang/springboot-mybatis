@@ -3,6 +3,7 @@ package com.wonders.service;
 import com.wonders.entity.UserInfo;
 import com.wonders.mapper.UserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,9 @@ public class UserInfoServiceImpl implements UserInfoService {
      * 保存或者更新user的时候做缓存
      * !!!是把返回值存入value!!!
      * xml中 flushCache="false"
+     * 配置好缓存相关的策略，缓存刷新
+     * 设置flushCache 属性为false，默认是true，即更新的时候会刷新缓存。
+     * http://blog.csdn.net/u014042066/article/details/76861102
      */
     @Override
     @CachePut(value = "userInfo", key = "#userInfo.uid")
@@ -49,6 +53,12 @@ public class UserInfoServiceImpl implements UserInfoService {
         userInfoMapper.updateByPrimaryKey(userInfo);
         //userInfoMapper.insert(userInfo);
         return userInfo;
+    }
+
+    @CacheEvict(value = "userInfo", key = "#uid")
+    @Override
+    public void evictUser(Long uid) {
+
     }
 
 

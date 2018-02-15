@@ -12,4 +12,5 @@ public interface UserInfoService {
 
     UserInfo getUserBySpringCatche(UserInfo userInfo);
     UserInfo saveOrUpdateUserBySpringCatche(UserInfo userInfo);
+    void evictUser(Long uid);
 }

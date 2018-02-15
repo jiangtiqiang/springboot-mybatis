@@ -20,6 +20,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     #type: com.alibaba.druid.pool.DruidDataSource
     connectionProperties: druid.stat.mergeSql=true
+    #也可以不配置 默认就可以
+    spring:
+      cache:
+        jcache:
+          config: classpath:ehcache.xml
 mybatis:
   #实体类所做包
   type-aliases-package: wonders.entity
