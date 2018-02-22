@@ -57,8 +57,10 @@ logging:
 
 4.编写代码 测试即可。
 
-存在问题：mybatis-config文件还没有引入项目中来
-
+存在问题：
+mybatis-config文件还没有引入项目中来
+mybatis参考：
+https://www.jianshu.com/p/e723e957da2c
 
 
 
