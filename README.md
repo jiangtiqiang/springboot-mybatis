@@ -85,3 +85,6 @@ https://www.jianshu.com/p/e723e957da2c
 存在问题：
 1.update的xml中 flushCache="false"作用是什么。
 2.ehcache.xml中的配置还不清楚，同时还可以采用java配置舍弃xml配置方式
+
+
+三.java8
